@@ -2,10 +2,10 @@ from django.contrib import admin
 from . import models
 
 
-@admin.register(models.RoomType)
-class RoomTypeAdmin(admin.ModelAdmin):
+@admin.register(models.RoomType, models.Facility, models.Amenity, models.HouseRule)
+class ItemAdmin(admin.ModelAdmin):
 
-    """ RoomType Admin Definition """
+    """ Item Admin Definition """
 
     pass
 
