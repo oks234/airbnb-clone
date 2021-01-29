@@ -97,8 +97,8 @@ class Room(core_models.TimeStampedModel):
     house_rules = models.ManyToManyField("HouseRule", related_name="rooms", blank=True)
 
     def save(self, *args, **kwargs):
-
-        super(ModelName, self).save(*args, **kwargs)  # Call the real save() method
+        self.city = str.capitalize(self.city)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
